@@ -1,0 +1,40 @@
+server:
+  port: 6062
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/microservices
+    password: ANand@123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: RATING-SERVICE
+
+  security:
+    oauth2:
+      resourceserver:
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+
+
+okta:
+  oauth2:
+    issuer: https://dev-53114392.okta.com/oauth2/default
+    audience: api://default
+
+
+
+
